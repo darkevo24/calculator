@@ -16,11 +16,10 @@ export default function Home() {
     let percentage = change * custom/100;
     setTip(parseFloat(percentage.toFixed(2)));
     setTotal(parseFloat((change + percentage).toFixed(2)));
-    console.log(custom);
   };
 
   useEffect(function(){
-    document.getElementById("custom").addEventListener("keypress", function(event) {
+    document.addEventListener("keypress", function(event) {
       if (event.key === "Enter") {
         Custom();
       }
