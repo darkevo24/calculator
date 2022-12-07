@@ -9,7 +9,7 @@ export default function Home() {
   const [total,setTotal] = useState(0);
   const [bill,setBill] = useState(0);
   const [people,setPeople] = useState(0);
-  const [custom,setCustom] = useState(0);
+  const [custom,setCustom] = useState("custom");
 
   function Custom(){
     let change = bill/people;
@@ -32,6 +32,7 @@ export default function Home() {
     setPeople(0);
     setTip(0);
     setTotal(0);
+    setCustom(0);
   }
 
   return (
@@ -95,7 +96,7 @@ export default function Home() {
               <div id="custom" className='bg-[#f3f8fb] cursor-pointer text-[#637d7b] flex items-center justify-center px-2 py-1 rounded-md'>
                 <input onChange={function(e){
                   setCustom(e.target.value);
-                }} defaultValue={custom} placeholder='Custom' type="number" className='bg-[#f3f8fb] text-2xl w-20'></input>
+                }} value={custom} placeholder='Custom' type="number" className='bg-[#f3f8fb] text-2xl w-20'></input>
               </div>
             </div>
             <p className='mt-5 text-[#92a1a2] font-bold'>Number of People</p>
